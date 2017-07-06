@@ -1,0 +1,46 @@
+
+    <div class="panel panel-info">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center li_allActivity_head">
+                活 动 列 表
+            </div>
+        </div>
+        <div class="panel-heading li_allActivity_content_head_position">
+            <div class="row li_allActivity_content_head">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">轮播显示</div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">活动名称</div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">活动性质</div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">活动时间</div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">编辑</div>
+            </div>
+        </div>
+        <div class="panel-body contentPosition" ng-repeat="activity in itemx[curpage]">
+            <div class="row  li_allActivity_content" style="display: flex;flex-direction: row;">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-left li_allActivity_content_check">
+                    <div class="roundedOne">
+                        <input type="checkbox" value="None" id="{{activity.activityid}}" name="check" ng-true-value="1" ng-false-value="0" ng-model="activity.isdisplay" ng-change="aa($index,activity.activityid,activity.isdisplay)" />
+                        <label for="{{activity.activityid}}"></label>
+                    </div>
+
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-bind="activity.title"></div>
+                <div  class="col-xs-2 col-sm-2 col-md-2 col-lg-2 " ng-bind="activity.name"></div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 " ng-bind="activity.data"></div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right"> <a ng-click="edit(activity)">修改</a></div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><a  ng-click="deleteActivity(activity.activityid)">删除</a></div>
+            </div>
+        </div>
+        <div class="panel-body ">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <button class="button li_allActivity_footer_show" ><span ng-click="showactivity()">去显示 </span></button>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-right" style="font-size: 1.2em;padding-right: 50px">
+                    <do-page></do-page>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+

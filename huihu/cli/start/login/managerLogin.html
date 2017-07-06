@@ -1,0 +1,38 @@
+
+<div >
+    <!--nav start-->
+    <nav class="home_nav ">
+        <div class="container">
+            <div class="home_row" style="min-width: 550px">
+                <div class="home_nav_logo">
+                    <a href="#" ui-sref="home"> <img src="http://test.10knet.com/FpPqGAEqJydiNKRvFiwZLR7NdNRr" width="40" /></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--nav end-->
+<div class="container1" style="display: flex;flex-direction: column;justify-content: center;min-width: 400px">
+    <section id="content1">
+        <form action="" id="myform">
+            <h1>管 理 员 登 录</h1>
+            <div>
+                <input type="text" placeholder="Username" required id="username"  ng-model="usename"/>
+               <span style="color: red;display:block;margin-top: -35px;margin-bottom: 15px;margin-left: -200px;font-size: 17px" ng-show="exist">用户不存在</span>
+            </div>
+            <div>
+                <input type="password" placeholder="Password" required id="password"  ng-model="password" ng-keyup="enterEvent($event)" />
+            </div>
+            <div style="padding-left: 50px">
+                <input type="button" id="btnLogin" value="登录" ng-click="submitForm()"/>
+            </div>
+        </form><!-- form -->
+
+    </section><!-- content -->
+</div><!-- container -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal1">
+        <div id="caption" style="color: red;font-size: 17px"></div>
+    </div>
+
+</div>

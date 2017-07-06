@@ -1,0 +1,127 @@
+
+<!--添加专家内容区-->
+<div class="panel panel-info" >
+    <div class="panel-heading" style="font-size: 1.6em;">
+        添 加 专 家
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" enctype="multipart/form-data">
+            <div class="row addExpert">
+                <div class="form-group " >
+                    <label for="name" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left"  >专家姓名</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <input  style="height: 45px" type="text" class="form-control" id="name" placeholder="name" ng-model="name" required>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="row addExpert">
+                <div class="form-group " >
+                    <label for="photo" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left" >专家照片</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+
+                        <input class="btn btn-info" type="button"  ng-click="uploadExpert()" id="icon" value="+上传图片">
+                        <img src="" alt="" id="img" style="width: 100px;height: 100px;margin-left: 100px">
+
+                        <input style="display: none"  type="text" class="form-control" id="photo" placeholder="photo" ng-model="head">
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="row addExpert">
+                <div class="form-group">
+                    <label for="phone" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label  edit_left" >联系方式</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <input  style="height: 45px" type="text" pattern="^1[0-9]{10}$" class="form-control" id="phone" placeholder="phone" ng-model="phonenum" required>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="row addExpert">
+
+                <div class="form-group ">
+                    <label for="inputPassword3" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left">初始密码</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <input  style="height: 45px" type="password" class="form-control" id="inputPassword3" placeholder="Password"  ng-model="password" required>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+
+            </div>
+            <div class="row addExpert">
+
+                <div class="form-group ">
+                    <label for="company" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left">在职公司</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <input  style="height: 45px" type="text" class="form-control" id="company" placeholder="公司信息" ng-model="company" required>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+
+            </div>
+            <div class="row addExpert">
+
+                <div class="form-group ">
+                    <label for="position" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left">工作职位</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <input  style="height: 45px" type="text" class="form-control" id="position" placeholder=" 工作职位" ng-model="position" required>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="row addExpert">
+
+                <div class="form-group ">
+                    <label for="xiangmu" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left">代表项目</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <textarea type="text" class="form-control" id="xiangmu" placeholder=" 代表项目" ng-model="works" required></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="row addExpert">
+
+                <div class="form-group">
+                    <label for="year"  class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label edit_left">工作年限</label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <input type="number" class="form-control" id="year" placeholder=" 工作年限" ng-model="extime" required>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="row addExpert">
+                <div class="form-group">
+                    <label for="detail" class="col-sm-2 col-xs-2 col-md-2 col-lg-2 control-label edit_left" >
+                        个人简介:
+                    </label>
+                    <div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">
+                        <textarea type="text" class="form-control textdetail" id="detail"  ng-model="description" required> </textarea>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4"></div>
+                    <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2">
+                        <input type="submit" class="btn btn-primary adde_btn" ng-click="addExpert()" value="提交">
+                    </div>
+                    <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2">
+                        <input type="reset" class="btn btn-primary adde_btn"  id="reset" value="重置">
+                    </div>
+                    <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4"></div>
+                </div>
+
+        </form>
+    </div>
+
+    <!--模态框-->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal1">
+        <div id="caption" style="color: red;font-size: 1.5em"></div>
+    </div>
+
+</div>
+
+

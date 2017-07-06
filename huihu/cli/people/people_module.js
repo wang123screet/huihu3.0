@@ -1,0 +1,2 @@
+
+angular.module("people",['page']);

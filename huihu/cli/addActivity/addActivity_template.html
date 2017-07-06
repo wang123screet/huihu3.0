@@ -1,0 +1,164 @@
+
+<div class="panel  panel-info">
+
+    <div class="panel-heading ">
+        <div class="row">
+            <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 li_adda_head ">
+                添 加 活 动
+            </div>
+        </div>
+    </div>
+    <form class="form-horizontal" enctype="multipart/form-data">
+    <div class="panel-body" >
+        <div class="row li_adda_position">
+            <div class="form-group">
+                <label for="icon" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_icon" >
+                    活动Logo图:
+                </label>
+                <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+
+                    <input type="text" id="url" style="display: none" ng-model="imgurl">
+                    <input class="btn btn-info" type="button"  ng-click="uploadIcon()" id="icon-btn" value="+上传图片" ng-disabled="f">
+                    <img src="" alt="" id="img" style="width: 100px;height: 100px;margin-left: 100px">
+
+                    <div class="sk-circle" id="process">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4"></div>
+            </div>
+        </div>
+
+            <div class="row li_adda_position">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font">
+                        活动名称:
+                    </label>
+                    <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                        <input style="height: 45px" type="text " class="form-control" id="name" ng-model="title" required>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4"></div>
+                </div>
+            </div>
+            <div class="row li_adda_position">
+                <div class="form-group">
+                    <label for="time" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font">
+                        主办时间:
+                    </label>
+                    <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                        <input  style="height: 45px" type="datetime-local" class="form-control" id="time" ng-model="data" required>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4 adda_test" id="test1"></div>
+                </div>
+            </div>
+        <div class="row li_adda_position">
+            <div class="form-group">
+                <label for="endtime" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font">
+                    结束时间:
+                </label>
+                <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                    <input  style="height: 45px" type="datetime-local" class="form-control" id="endtime" ng-model="endtime" required>
+                </div>
+                <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4 adda_test" id="test2"></div>
+            </div>
+        </div>
+        <div class="row li_adda_position">
+            <div class="form-group">
+                <label for="host" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font">
+                    主办方:
+                </label>
+                <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                    <input  style="height: 45px" type="text" class="form-control" id="host" ng-model="host" required>
+                </div>
+                <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4"></div>
+            </div>
+        </div>
+            <div class="row li_adda_position">
+                <div class="form-group">
+                    <label for="place" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font">
+                        活动地点:
+                    </label>
+                    <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                        <input  style="height: 45px" type="text " class="form-control" id="place" ng-model="address" required>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4"></div>
+                </div>
+            </div>
+            <div class="row li_adda_position">
+                <div class="form-group">
+                    <label for="type" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font">
+                        活动类型:
+                    </label>
+                    <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
+                    <select id="type" ng-init="x='0'"  ng-change="change(x)" ng-model="x" re style="width: 100%;height: 45px;border-radius: 5px;border-color: #c4c4c4">
+                        <option value="0" >--请选择类型--</option>
+                        <option value="1">声学</option>
+                        <option value="2">光学</option>
+                        <option value="3">电子</option>
+                        <option value="4">机构</option>
+                        <option value="5">软件</option>
+                        <option value="6">新材料</option>
+                        <option value="7">先进制造技术</option>
+                        <option value="8">3D打印</option>
+                        <option value="10">研发管理</option>
+                        <option value="11">创新思维</option>
+                        <option value="12">人才招聘</option>
+                        <option value="9">其他</option>
+                    </select>
+                    </div>
+
+                    <div class="col-sm-4 col-xs-12 col-md-4 col-lg-4 adda_test" id="test3"></div>
+                </div>
+            </div>
+            <div class="row li_adda_position">
+                <div class="form-group">
+                    <label for="detail" class="col-sm-2 col-xs-12 col-md-2 col-lg-2 control-label li_adda_left_font" >
+                        活动简介:
+                    </label>
+                    <div class="col-sm-8 col-xs-12 col-md-8 col-lg-8">
+                        <textarea type="text " class="form-control adda_textdetail" id="detail" ng-model="description" ></textarea>
+                    </div>
+                    <div class="col-sm-2 col-xs-12 col-md-2 col-lg-2" ></div>
+               </div>
+            </div>
+    </div>
+    <div class="panel-body" >
+            <div class="row">
+                <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4"></div>
+                <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2">
+                    <input type="submit" class="btn btn-primary adda_btnsize " value="提交" ng-click="submit()">
+                </div>
+                <div class="col-sm-2 col-xs-2 col-md-2 col-lg-2">
+                    <input type="reset" class="btn btn-primary adda_btnsize " id="reset" value="重置">
+                </div>
+                <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4"></div>
+            </div>
+    </div>
+    </form>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal1">
+        <div id="caption" style="color: red;font-size: 1.5em"></div>
+    </div>
+
+
+
+
+
+</div>
+

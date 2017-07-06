@@ -1,0 +1,303 @@
+
+<div>
+
+    <!--nav start-->
+    <nav class="home_nav ">
+        <div class="container">
+            <div class="home_row" style="min-width: 550px">
+                <div class="home_nav_logo">
+                    <img src="http://test.10knet.com/FpPqGAEqJydiNKRvFiwZLR7NdNRr" width="40" alt="LOGO"/>
+                </div>
+                <div style="display: flex;flex-direction: row">
+                    <a href="#"> <span class="home_nav_item nav_active" id="homeLink" ng-click="gotohome($event)">首页</span></a>
+                    <span id="usLink" class="home_nav_item" ng-click="gotous($event)">关于我们</span>
+
+                    <div ng-switch on="isLogin">
+                        <div ng-switch-default>
+                            <span class="home_nav_item" ui-sref="login">
+                                 <img src="./img/manage.png" height="30" width="30" alt="Login"/>管理员登陆
+                            </span>
+                        </div>
+                        <div ng-switch-when="true">
+                            <a href="./cli/index.html" >
+                                <span class="home_nav_item" >
+                                 <img src="./img/manage.png" height="30" width="30"  alt="Login"/>后台管理系统
+                                </span>
+                            </a>
+                        </div>
+                        <div ng-switch-when="false">
+                            <span class="home_nav_item" ui-sref="login">
+                                 <img src="./img/manage.png" height="30" width="30"  alt="Login"/>管理员登陆
+                            </span>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!--nav end-->
+
+    <!--banner start-->
+    <div id="myCarousel" class="carousel slide" style="margin-top:52px">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" >
+            <div class="item active" >
+                <img src="http://test.10knet.com/Fk90844MOt0IdYQgoiIkr8dxOVec" style="height: 400px;width: 100%"  alt="慧湖创研"/>
+            </div>
+            <div class="item ">
+                <img src="http://test.10knet.com/FrcUf5TUM0E6kI09g85g5gTA4x15"  style="height: 400px;;width: 100%"  alt="慧湖创研"/>
+            </div>
+            <div class="item">
+                <img src="http://test.10knet.com/FrP-_7INRveUwW3l3uLJaQOzTUc3"  style="height: 400px;;width: 100%"  alt="慧湖创研"/>
+            </div>
+        </div>
+        <a href="#myCarousel" data-slide="prev" class="carousel-control left">
+            <img src="http://test.10knet.com/FkunegP9s_P9VOStzF6f99ml7H9A" height="60" width="40" class="pre_btn"  alt="慧湖创研_pre"/>
+        </a>
+        <a href="#myCarousel" data-slide="next" class="carousel-control right">
+            <img src="http://test.10knet.com/FrQF1BvUARohjRa_RqqB3MFBNPko" height="60" width="40" class="next_btn"  alt="慧湖创研_next"/>
+        </a>
+    </div>
+    <!--banner end-->
+
+    <!--three icons start-->
+    <div class="container-fluid">
+        <div class="row home_icons">
+
+            <div class="col-lg-4 col-md-4 col-xm-4 col-xs-4 text-center icon_one">
+                <div class="icon_base">
+                    <img src="./img/icon/activity.png" class="icons_img"  alt="慧湖创研"/>
+                </div>
+                <div class="icon_base_fill">
+                    <div class="home_fill_icons" >
+                        <img src="./img/icon/activity_fill.png" class="icons_img"  alt="慧湖创研"/>
+                    </div>
+                </div>
+                <div class="home_icon_content" >
+                    <p class="home_icon_content1" >活动沙龙</p>
+                    <p class="home_icon_content2" >定期举办智能硬件讲座。畅所欲言，这场创新研发的盛宴，期待你的加入</p>
+                </div>
+                <div class="icon_hr"></div>
+            </div>
+
+
+
+
+            <div class="col-lg-4 col-md-4 col-xm-4 col-xs-4 text-center icon_two">
+                <div class="icon_base icon_base_two">
+                    <img src="./img/icon/group.png" class="icons_img"  alt="慧湖创研"/>
+                </div>
+                <div class="icon_base_fill icon_base_fill_two">
+                    <div class="home_fill_icons">
+                        <img src="./img/icon/group_fill.png" class="icons_img"  alt="慧湖创研"/>
+                    </div>
+                </div>
+                <div class="home_icon_content">
+                    <p class="home_icon_content1">专家团队</p>
+                    <p class="home_icon_content2">最权威的创新研发团队，最简单有效解决问题的方法。线上线下，问你想问</p>
+                </div>
+                <div class="icon_hr icon_hr_two"></div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4 col-xm-4 col-xs-4 text-center icon_three">
+                <div class="icon_base icon_base_three">
+                    <img src="./img/icon/manage.png" class="icons_img"  alt="慧湖创研"/>
+                </div>
+                <div class="icon_base_fill icon_base_fill_three">
+                    <div class="home_fill_icons">
+                        <img src="./img/icon/manage_fill.png" class="icons_img"  alt="慧湖创研"/>
+                    </div>
+                </div>
+                <div class="home_icon_content">
+                    <p class="home_icon_content1">核心分类</p>
+                    <p class="home_icon_content2">创新竞争力分类，话题新颖、内容丰富，满足你对创新研发的所有期待</p>
+                </div>
+                <div class="icon_hr icon_hr_three"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--three icons end-->
+
+
+    <!--activitys start-->
+    <div class="container-fluid" >
+        <div class="row text-center" id="activity_duide">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center li_activity_title" >
+                <h1 class="home_acyivity_title">精 彩 活 动</h1>
+            </div>
+        </div>
+
+        <div class="row home_activity_content">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 home_activity_content_item">
+                <div class="h_activity_border">
+                    <div class="h_activity_img normal1">
+                        <img width="100%" height="100%" src="{{allActivity[0].logo}}"  alt="慧湖创研">
+                    </div>
+                    <div class="h_activity_detail normal1">
+                        <p class="h_activity_detail_title" ng-bind="allActivity[0].title">创新沙龙大会创新沙龙大会创新沙龙大会创新沙龙大会</p>
+                        <div class="h_activity_detail_time1">举办时间:<span ng-bind="allActivity[0].data">2017-6-20 12:12:00</span></div>
+                        <div class="h_activity_detail_time2">举办地点:<span ng-bind="allActivity[0].deadline">2017-6-20 12:12:00</span> </div>
+                    </div>
+                    <div class="activity_rotate unnormal1" ng-bind="allActivity[0].description">
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 home_activity_content_item" >
+                <div class="h_activity_border">
+                    <div  class="h_activity_img normal2">
+                        <img src="{{allActivity[1].logo}}" width="100%" height="100%"  alt="慧湖创研">
+                    </div>
+
+                    <div class="h_activity_detail normal2">
+                        <p class="h_activity_detail_title"  ng-bind="allActivity[1].title">创新沙龙大会</p>
+                        <div class="h_activity_detail_time1">举办时间:<span  ng-bind="allActivity[1].data">2017-6-20 12:12:00</span></div>
+                        <div class="h_activity_detail_time2">举办地点:<span  ng-bind="allActivity[1].deadline">2017-6-20 12:12:00</span> </div>
+                    </div>
+                    <div class="activity_rotate unnormal2"  ng-bind="allActivity[1].description">
+                        滴答滴答滴答滴答滴答滴答滴答滴答滴答答
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 home_activity_content_item" >
+                <div  class="h_activity_border">
+                    <div  class="h_activity_img normal3">
+                        <img src="{{ allActivity[2].logo}}" width="100%" height="100%"  alt="慧湖创研">
+                    </div>
+                    <div  class="h_activity_detail normal3">
+                        <p class="h_activity_detail_title"  ng-bind="allActivity[2].title">创新沙龙大会</p>
+                        <div class="h_activity_detail_time1">举办时间:<span  ng-bind="allActivity[2].data">2017-6-20 12:12:00</span></div>
+                        <div class="h_activity_detail_time2">举办地点:<span  ng-bind="allActivity[2].deadline">2017-6-20 12:12:00</span> </div>
+                    </div>
+                    <div class="activity_rotate unnormal3"  ng-bind="allActivity[2].description">
+                        啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦哈哈哈哈哈哈
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--activitys end-->
+
+
+    <!--phone start-->
+    <!--<div class="container-fluid">-->
+    <div class="container-fluid phone_base" style="min-width: 768px">
+        <div class="row phone_size">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 phone_left">
+                <div class="phone_left_title1">线 上 交 流</div>
+                <div class="phone_left_title2" >线 下 沙 龙 聚 会</div>
+                <div class="phone_left_title3" >创新思维，研发管理，声学、光学、电子、机构、软件、新材料、先进制造技术、3D打印十一大创新核心竞争力</div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right phone_right">
+                <!-- height="360px" width="375"-->
+                <img src="http://test.10knet.com/Fh2oQaveIl1F7OM0rUCl3ne3CN-r" class="phoneImg"  alt="慧湖创研">
+            </div>
+
+        </div>
+
+    </div>
+    <!--</div>-->
+
+    <!--phone end-->
+
+
+    <!--steps start-->
+    <!--question step-->
+    <div class="step_row_container">
+        <div class="step_size">
+            <div class="step_base">
+                <h1 class="step_title">随时随地问你想问</h1>
+                <div class="step_content">
+                    <!--step 1-->
+                    <div class="step_content_base">
+                        <img src="http://test.10knet.com/FhJqDD4e2S7oHXUd8imCtOHc_FhA"  width="100%"  alt="慧湖创研"/>
+                        <div class="stepNum">1</div>
+                        <div class="step_content_item">
+                            告诉我们关于你的问题
+                        </div>
+                    </div>
+                    <!--箭头-->
+                    <div class="step_row">
+                        <img src="./img/row.png" height="24" class="change_direction"  alt="慧湖创研"/>
+                    </div>
+                    <!--step2-->
+                    <div class="step_content_base">
+                        <img src="http://test.10knet.com/Fi3ZcA5r34hFfL3cGwtuOXs0Hgs-"  width="100%"  alt="慧湖创研"/>
+                        <div class="stepNum">2</div>
+                        <div class="step_content_item">
+                            我们将会以最快的速度帮您解决问题
+                        </div>
+                    </div>
+                    <!--箭头-->
+                    <div class="step_row">
+                        <img src="./img/row.png" height="24" class="change_direction"  alt="慧湖创研"/>
+                    </div>
+                    <!--step3-->
+                    <div class="step_content_base">
+                        <img src="http://test.10knet.com/FhJqDD4e2S7oHXUd8imCtOHc_FhA"  width="100%"  alt="慧湖创研"/>
+                        <div class="stepNum">3</div>
+                        <div class="step_content_item">
+                            线上回答，线下交流
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--steps end-->
+
+
+    <!--about us start-->
+    <div id="about_us"  class="container-fluid">
+        <div class="row us_bgsize">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="us_title">关于我们</div>
+                <div>
+                    <h4 class="us_content_h" >一个权威的团队</h4>
+                    <p class="us_content_p" >我们基本上是一个现代化的商业解决方案提供商，创造了一个机会，为每个其他人的生活。</p>
+                    <h4 class="us_content_h">一场硬件的沙龙</h4>
+                    <p  class="us_content_p" >我们相信，最大的机会，任何人都可以做自己的爱，和作为一种激励，遵循它作为自己的职业生涯。</p>
+                    <h4 class="us_content_h">一个自恋的WebApp</h4>
+                    <p  class="us_content_p" >我们这样做是因为我们知道帮助别人的感觉是多么的好，并且把这个帮助变成一个链条是多么的精彩。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--about us end-->
+
+
+    <!--footer-->
+    <div class="container-fluid" style="min-width: 630px">
+        <div class="row text-center footer_top">
+            <span class="footer_span">关于我们</span>
+            <span class="footer_span" >联系电话:15822375775</span>
+            <span class="footer_span" >E-mail:123456@hhcy.com</span>
+            <span class="footer_span" >负责人:张三</span>
+        </div>
+        <div class="row text-center footer_bottom">
+            © 2017 HuiHuChuangYan. All Rights Reserved.
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <link href="./../favico.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>后台管理</title>
+    <script type="text/javascript">
+        if(localStorage.getItem('isLogin')){
+
+        }else {
+            window.location.href='./../index.html';
+        }
+    </script>
+
+    <!--cdn-->
+    <script src="https://cdn.bootcss.com/highcharts/5.0.12/highcharts.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+
+    <link rel="stylesheet" href="./../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <script src="./../lib/jquery-3.1.1.min.js"></script>
+    <script src="./../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <script src="./../lib/angular-1.6.3/angular.min.js"></script>
+
+    <script src="./../lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <link rel="stylesheet" href="./../css/b_home.css">
+    <link rel="stylesheet" href="./../css/multi.css">
+
+    <!--路由配置-->
+    <script src="./manage_js/manage_module.js"></script>
+    <script src="./manage_js/manage_config.js"></script>
+    <script src="./manage_js/controller.js"></script>
+    <!--分页-->
+    <script src="./page/page_module.js"></script>
+    <script src="./page/page_directive.js"></script>
+    <!--全部活动-->
+    <script src="./allActivity/allActivityModule.js"></script>
+    <script src="./allActivity/allActivityDirective.js"></script>
+
+    <!--添加活动-->
+    <script src="./addActivity/addActivity_module.js"></script>
+    <script src="./addActivity/addActivity_directive.js"></script>
+    <link rel="stylesheet" href="./addActivity/addActivity.css">
+    <script src="./addActivity/service.js"></script>
+    <!--专家-->
+    <script src="./expert/expert_module.js"></script>
+    <script src="./expert/expert_directive.js"></script>
+    <!--普通用户-->
+    <script src="./people/people_module.js"></script>
+    <script src="./people/people_directive.js"></script>
+    <!--报名人员-->
+    <script src="./number/number_module.js"></script>
+    <script src="./number/number_directive.js"></script>
+    <!--修改活动-->
+    <script src="./edit/editModule.js"></script>
+    <script src="./edit/editDirective.js"></script>
+    <link rel="stylesheet" href="./edit/editCss.css">
+    <!--添加专家-->
+    <script src="./addExpert/addExpert_module.js"></script>
+    <script src="./addExpert/addExpert_directive.js"></script>
+    <link rel="stylesheet" href="./addExpert/addExpert.css">
+    <!--确认弹框-->
+    <script src="./../lib/js/jquery.confirm.js"></script>
+    <link rel="stylesheet" href="./../lib/js/jquery.confirm.css">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+</head>
+<body ng-app="manageApp" ng-controller="ctrlreg" class="body_base">
+
+
+
+<!--nav start-->
+<nav class="nav  navbar-fixed-top li_nav" style="min-width: 500px;border-radius: 0px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 c_i_nav">
+                <a href="./../index.html" class="navbar-brand " >
+                    <img src="http://test.10knet.com/FqFDOxwbi5RfHkPrWtobTMsYiplz" width="50"/>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 text-left manage_nav">
+                网站后台管理系统
+            </div>
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2 col-md-6 col-sm-5 col-xs-3 text-right logout" ng-click="logout()">
+                <div >
+                    <img src="./../img/logout.png" alt="" width="15" class="logoutimg">
+                </div>
+                <div class="c_i_logout">
+                    <span class="c_i_logout1">安全退出</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav><!--nav end-->
+<!--content start-->
+<div class="container-fluid c_i_content">
+    <div class="row">
+        <!--left start-->
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 manage_left c_i_content_left" style="min-width: 200px">
+
+            <div class="c_i_content_left1">
+                <p class="icon_font">
+                    <span>
+                    <img src="../img/activity.png" width="28"/>
+                    </span>
+                    <span class="c_i_content_left2">活动管理</span>
+                </p>
+                <p class="h"></p>
+                <div class="aa "><p class="left_item_p " ng-class="{true:'left_item_p nav_activestate',false:'left_item_p'}['/start'==state]" ui-sref="start">全部活动</p></div>
+                <div class="aa">  <p class="left_item_p" ui-sref="addActivity" ng-class="{true:'left_item_p nav_activestate',false:'left_item_p'}['/addActivity'==state]">添加活动</p></div>
+            </div>
+            <div class="c_i_content_left1">
+                <p class="icon_font" >
+                    <span>
+
+                    <img src="../img/user.png"  width="28"/></span>
+                    <span class="c_i_content_left2" >用户管理</span>
+                </p>
+                <p class="h"></p>
+               <div class="aa"> <p class="left_item_p" ui-sref="expert" ng-class="{true:'left_item_p nav_activestate',false:'left_item_p'}['/expert'==state]">专家信息</p></div>
+                <div class="aa"> <p class="left_item_p" ui-sref="people" ng-class="{true:'left_item_p nav_activestate',false:'left_item_p'}['/people'==state]">普通用户</p></div>
+                <div class="aa"> <p class="left_item_p" ui-sref="number" ng-class="{true:'left_item_p nav_activestate',false:'left_item_p'}['/number'==state]">活动报名人员</p></div>
+            </div>
+
+        </div><!--left end-->
+
+
+
+        <!--position start-->
+        <div class="manage_right position">
+            当前位置:
+            <div ng-switch on="state">
+                <div ng-switch-default>
+                    <a ui-sref="start"> 全部活动</a>
+                </div>
+                <div ng-switch-when="/edit">
+                    <a ui-sref="start"> 全部活动</a>
+                    <a ui-sref="edit">> 修改活动</a>
+                </div>
+                <div ng-switch-when="/addActivity">
+                    <a ui-sref="addActivity">  添加活动</a>
+                </div>
+                <div ng-switch-when="/expert">
+                    <a ui-sref="expert"> 专家</a>
+                </div>
+                <div ng-switch-when="/addExpert">
+                    <a ui-sref="expert"> 专家</a>
+                    <a ui-sref="addExpert">> 添加专家</a>
+                </div>
+                <div ng-switch-when="/people">
+                    <a ui-sref="people"> 普通用户</a>
+                </div>
+                <div ng-switch-when="/number">
+                    <a ui-sref="number"> 活动报名人员</a>
+                </div>
+            </div>
+        </div>
+        <!--position  end-->
+
+        <!--right start-->
+        <div  id="view_show" class="col-lg-10 col-md-10 col-sm-9 col-xs-8 manage_right c_i_content_right" style="min-width: 500px">
+            <div ui-view>
+
+            </div>
+        </div><!--right end-->
+        <div id="view_hide"   class="col-lg-10 col-md-10 col-sm-9 col-xs-8 manage_right">
+            <div class="sk-fading-circle">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+        </div>
+
+    </div>
+</div><!--content end-->
+
+
+
+<!-- Button trigger modal -->
+<button style="display: none" id="haha" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModa">
+    <!--Launch demo modal-->
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div id="show" class="modal-body" style="font-size: 1.3em">
+                <!--只能选择三个活动进行显示-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

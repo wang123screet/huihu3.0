@@ -1,0 +1,162 @@
+<!--编辑修改的主内容区-->
+
+<div >
+            <div class="panel panel-info " >
+                <div class="panel-heading edit2">编 辑 活 动 信 息</div>
+                <form class="form-horizontal" enctype="multipart/form-data">
+                    <div class="panel-body" >
+                        <div class="row input_distance" >
+                            <div class="form-group">
+                                <label for="icon" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font edit_logo" >
+                                    活动LOGO:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-6 col-lg-6" style="padding-top: 7px">
+                                    <input class="btn btn-info" type="button"  ng-click="editIcon()" id="icon-btn" value="+修改图片">
+                                    <img src="" alt="" id="imgUrl" style="width: 100px;height: 100px" >
+                                    <input style="display:none" id="url" type="text" ng-model="logo">
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font">
+                                    活动名称:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-6 col-lg-6">
+                                    <input type="text " class="form-control" id="name" ng-model="editActivity.title" required>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <div class="form-group">
+                                <label for="time" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font">
+                                    主办时间:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-6 col-lg-6">
+                                    <input type="datetime-local" class="form-control" id="time" ng-model="editActivity.data" required>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <div class="form-group">
+                                <label for="deadline" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font">
+                                    结束时间:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-6 col-lg-6">
+                                    <input type="datetime-local" class="form-control" id="deadline" ng-model="editActivity.deadline" required>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <div class="form-group">
+                                <label for="place" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font">
+                                    活动地点:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-6 col-lg-6">
+                                    <input type="text " class="form-control" id="place" ng-model="editActivity.address" required>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <div class="form-group">
+                                <label for="type" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font">
+                                    活动性质:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-6 col-lg-6">
+                                    <select id="selected"  ng-model="editActivity.category" style="width: 100%;height: 35px;border-radius: 5px;border-color: #c4c4c4">
+                                        <option value="1" id="1" >声学</option>
+                                        <option value="2" id="2" >光学</option>
+                                        <option value="3" id="3" >电子</option>
+                                        <option value="4" id="4">机构</option>
+                                        <option value="5" id="5" >软件</option>
+                                        <option value="6" id="6" >新材料</option>
+                                        <option value="7" id="7" >先进制造技术</option>
+                                        <option value="8" id="8" >3D打印</option>
+                                        <option value="9" id="9" >其他</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <div class="form-group">
+                                <label for="detail" class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label detail li_adda_left_font" >
+                                    活动简介:
+                                </label>
+                                <div class="col-sm-7 col-xs-12 col-md-8 col-lg-8">
+                                    <textarea type="text " class="form-control edit_tt" id="detail" ng-model="editActivity.description" required></textarea>
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-3 col-lg-2" ></div>
+                            </div>
+                        </div>
+                        <div class="row input_distance">
+                            <label  class="col-sm-3 col-xs-12 col-md-3 col-lg-2 control-label li_adda_left_font edit_com">
+                                活动完成图片:
+                            </label>
+                            <div class="col-sm-8 col-xs-12 col-md-8 col-lg-8">
+
+                                <input type="text" id="urlcom" style="display:none" ng-model="editActivity.imgst">
+                                <input class="btn btn-info" type="button"  ng-click="comIcon()" id="icon-btncom" value="+上传图片"> <span>*最多上传4张图片</span>
+                                <div class="row" style="margin-top: 15px;border-bottom: solid 1px lightgray">
+                                    <div class="col-lg-12">图片预览</div>
+                                </div>
+                                <div class="row" id="show_img" style="display: none">
+                                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                       <img src="" alt="" id="a0" style="width: 100%" >
+                                   </div>
+                                    <div class="col-lg-2  col-md-2 col-sm-2 col-xs-2">
+                                        <img src="" alt="" id="a1" style="width: 100%">
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <img src="" alt="" id="a2" style="width: 100%" >
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <img src="" alt="" id="a3" style="width: 100%">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div class="col-sm-1 col-xs-12 col-md-1 col-lg-2"></div>
+                        </div>
+                    </div>
+                    <div class="panel-body" >
+                        <div class="row">
+                            <div class="col-sm-3  col-md-3 col-lg-4"></div>
+                            <div class="col-sm-3 col-xs-5 col-md-3 col-lg-2">
+                                <input type="button" class="btn btn-primary eidt_btnsize text-center" ng-click="edit()" value="提交">
+                            </div>
+                            <div class="col-xs-1"></div>
+                            <div class="col-sm-3 col-xs-5 col-md-3 col-lg-2">
+                                <input type="reset" class="btn btn-primary eidt_btnsize text-center " value="重置">
+                            </div>
+                            <div class="col-sm-3   col-md-3 col-lg-4"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal1">
+        <div id="caption" style="color: red;font-size: 1.5em"></div>
+    </div>
+
+</div>
+
+
+
+
+
+
